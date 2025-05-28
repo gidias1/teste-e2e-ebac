@@ -16,16 +16,16 @@
             cy.limparCarrinho();
     
             // Adicionar primeiro produto
-            cy.adicionarProduto('.post-2559 > .product-block > .block-inner > .image > .product-image > .image-hover', 'XS', 'Green');
+            cy.adicionarProduto('2559', 'XS', 'Green');
     
             // Adicionar segundo produto
-            cy.adicionarProduto('.post-3374 > .product-block > .block-inner > .image > .product-image > .image-hover', '32', 'Black');
+            cy.adicionarProduto('3374', '32', 'Black');
     
             // Adicionar terceiro produto
-            cy.adicionarProduto('.post-3647 > .product-block > .block-inner > .image > .product-image > .image-hover', 'S', 'Gray');
+            cy.adicionarProduto('3647', 'S', 'Gray');
     
             // Adicionar quarto produto
-            cy.adicionarProduto('.post-3964 > .product-block > .block-inner > .image > .product-image > .image-hover', 'XS', 'Purple');
+            cy.adicionarProduto('3964', 'XS', 'Purple');
     
             // Ir para o carrinho
             cy.get('.dropdown-toggle > .mini-cart-items').click();

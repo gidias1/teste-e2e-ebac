@@ -6,13 +6,19 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá')
 });
 
-Cypress.Commands.add('adicionarProduto', (seletorProduto, tamanho, cor) => {
-    cy.visit('/produtos')
-    cy.get(seletorProduto).click()
-    cy.get(`.button-variable-item-${tamanho}`).click()
-    cy.get(`.button-variable-item-${cor}`).click()
-    cy.get('.single_add_to_cart_button').click()
-});
+Cypress.Commands.add('adicionarProduto', (id_produto, tamanho, cor) => {
+
+  cy.visit('/produtos')
+ 
+  cy.get(`.post-${id_produto} > .product-block > .block-inner > .image > .product-image > .image-hover`).click()
+ 
+  cy.get(`.button-variable-item-${tamanho}`).click()
+ 
+  cy.get(`.button-variable-item-${cor}`).click()
+ 
+  cy.get('.single_add_to_cart_button').click()
+ 
+ });
 
 Cypress.Commands.add('limparCarrinho', () => {
     cy.visit('/carrinho');
